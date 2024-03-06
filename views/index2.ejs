@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <% if (weatherData && weatherData.name) { %> 
+        <p><%= weatherData.name %> </p>
+    <% } %> 
+    <% if (weatherData && weatherData.main) { %> </p>
+      <p>Temparature: <%= weatherData.main.temp %> </p>
+      <p>feels_like: <%= weatherData.main.feels_like %> </p>
+      <p>temp_max: <%= weatherData.main.temp_max %> </p>
+      <p>temp_min: <%= weatherData.main.temp_min %> </p>
+      <p>pressure: <%= weatherData.main.pressure %> </p>
+      <p>humidity: <%= weatherData.main.humidity %> </p>
+      <p>sea_level: <%= weatherData.main.sea_level %> </p>
+      <p>grnd_level: <%= weatherData.main.grnd_level %> </p>
+    <% } %>
+    <% if (weatherData && weatherData.coord) { %> 
+       <p>latitudes: <%= weatherData.coord.lat %> </p>
+       <p>longitudes: <%= weatherData.coord.lon %> </p>
+    <% } %> </p> 
+    <% if (weatherData && weatherData.wind) { %> 
+       <p>speed: <%= weatherData.wind.speed %> </p>
+        <p>deg: <%= weatherData.wind.deg %> </p>
+    <% } %> 
+</div>
+</body>
+</html>

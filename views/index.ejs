@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <title>WEATHER APP</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/weatherpost" method="POST" class="my-4 form-inline">
+            <input class="form-control form-control-lg" type="text" placeholder="Enter the city: "
+                aria-label=".form-control-lg example" name="temparature" id="temparature" required/>
+<br>
+            <button type="submit" class="btn btn-success">Genetate</button>
+        </form>
+    </div>
+    
+<div class="container">
+    <% if (weatherData && weatherData.name) { %> 
+        <p><%= weatherData.name %> </p>
+    <% } %> 
+    <% if (weatherData && weatherData.main) { %> </p>
+      <p>Temparature: <%= weatherData.main.temp %> </p>
+      <p>feels_like: <%= weatherData.main.feels_like %> </p>
+      <p>temp_max: <%= weatherData.main.temp_max %> </p>
+      <p>temp_min: <%= weatherData.main.temp_min %> </p>
+      <p>pressure: <%= weatherData.main.pressure %> </p>
+      <p>humidity: <%= weatherData.main.humidity %> </p>
+      <p>sea_level: <%= weatherData.main.sea_level %> </p>
+      <p>grnd_level: <%= weatherData.main.grnd_level %> </p>
+    <% } %>
+    <% if (weatherData && weatherData.coord) { %> 
+       <p>latitudes: <%= weatherData.coord.lat %> </p>
+       <p>longitudes: <%= weatherData.coord.lon %> </p>
+    <% } %> </p> 
+    <% if (weatherData && weatherData.wind) { %> 
+       <p>speed: <%= weatherData.wind.speed %> </p>
+        <p>deg: <%= weatherData.wind.deg %> </p>
+    <% } %> 
+</div>
+
+</body>
+
+</html>
